@@ -1,13 +1,30 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <div class="row">
+        <div class="col">
+          <btn-contador nombre="Instancia de componente 1"></btn-contador>
+        </div>
+        <div class="col">
+          <btn-contador nombre="Instancia de componente 2"></btn-contador>
+        </div>
+      </div>
+      <router-link to="/">Inicio</router-link>|
       <router-link to="/about">About</router-link>
     </div>
+
     <router-view />
   </div>
 </template>
 
+<script>
+import BtnContador from "./components/BtnContador";
+export default {
+  components: {
+    btnContador: BtnContador
+  }
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
